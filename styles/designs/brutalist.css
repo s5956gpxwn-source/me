@@ -1,0 +1,255 @@
+/* ================ NEO BRUTALIST LIQUID ================
+ * Bold typography, harsh shadows, liquid blobs crashing into a strict grid.
+ * ====================================================== */
+
+[data-design="brutalist"] body {
+  background: var(--bg);
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--fg) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--fg) 4%, transparent) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+[data-design="brutalist"] .card {
+  background: var(--bg-elevated);
+  border: var(--border-thick);
+  border-radius: 0;
+  box-shadow: var(--shadow-offset);
+  transition:
+    transform var(--dur-base) var(--ease-out-expo),
+    box-shadow var(--dur-base) var(--ease-out-expo);
+}
+[data-design="brutalist"] .card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 var(--fg);
+}
+
+[data-design="brutalist"] .btn {
+  background: var(--accent-1);
+  color: #fff;
+  border: var(--border-thick);
+  border-radius: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-offset-sm);
+  padding: 1rem 1.75rem;
+}
+[data-design="brutalist"] .btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--fg);
+}
+[data-design="brutalist"] .btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--fg);
+}
+[data-design="brutalist"] .btn--ghost {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Hero */
+[data-design="brutalist"] .hero--brutalist {
+  position: relative;
+  min-height: 100dvh;
+  padding-block: var(--space-20) var(--space-16);
+  overflow: hidden;
+}
+[data-design="brutalist"] .hero__big {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+[data-design="brutalist"] .hero__big .stroke {
+  -webkit-text-stroke: 3px var(--fg);
+  color: transparent;
+}
+[data-design="brutalist"] .hero__meta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-4);
+  align-items: end;
+  margin-block-start: var(--space-10);
+}
+[data-design="brutalist"] .hero__tag {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  background: var(--accent-3);
+  color: var(--fg);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-offset-sm);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: var(--text-sm);
+  transform: rotate(-2deg);
+}
+
+[data-design="brutalist"] .brutal-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.85;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+[data-design="brutalist"][data-theme="dark"] .brutal-blob {
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+/* Marquee */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-6);
+  border-block: var(--border-thick, 2px solid currentColor);
+  white-space: nowrap;
+}
+[data-design="brutalist"] .marquee {
+  background: var(--accent-3);
+  color: var(--fg);
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: marquee 24s linear infinite;
+  will-change: transform;
+}
+.marquee__item {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+}
+.marquee__item::after {
+  content: "✺";
+  font-size: 0.7em;
+  color: currentColor;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+html[dir="rtl"] .marquee__track {
+  animation-direction: reverse;
+}
+
+[data-design="brutalist"] .stat {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: 900;
+  color: var(--accent-1);
+  -webkit-text-stroke: 1px var(--fg);
+}
+
+[data-design="brutalist"] .chip-skill {
+  padding: 0.65rem 1.1rem;
+  border: var(--border-thick);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-offset-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--text-sm);
+  transition: all var(--dur-fast) var(--ease-out-expo);
+}
+[data-design="brutalist"] .chip-skill:nth-child(3n) { background: var(--accent-3); }
+[data-design="brutalist"] .chip-skill:nth-child(5n) { background: var(--accent-4); }
+[data-design="brutalist"] .chip-skill:hover {
+  transform: translate(-2px, -2px) rotate(-1deg);
+  box-shadow: 6px 6px 0 var(--fg);
+}
+
+[data-design="brutalist"] .social-card {
+  display: grid;
+  place-content: center;
+  gap: var(--space-3);
+  aspect-ratio: 1;
+  padding: var(--space-4);
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-offset-sm);
+  transition: all var(--dur-fast) var(--ease-out-expo);
+  text-align: center;
+}
+[data-design="brutalist"] .social-card:nth-child(odd) { background: var(--accent-3); }
+[data-design="brutalist"] .social-card:nth-child(3n) { background: var(--accent-1); color: #fff; }
+[data-design="brutalist"] .social-card:nth-child(4n) { background: var(--accent-2); color: #fff; }
+[data-design="brutalist"] .social-card:hover {
+  transform: translate(-4px, -4px) rotate(-2deg);
+  box-shadow: 10px 10px 0 var(--fg);
+}
+[data-design="brutalist"] .social-card svg {
+  width: 48px;
+  height: 48px;
+  margin-inline: auto;
+}
+
+[data-design="brutalist"] .contact__cta {
+  font-size: var(--text-7xl);
+  line-height: 0.95;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+}
+[data-design="brutalist"] .contact__cta .email {
+  display: inline-block;
+  padding: 0 0.5rem;
+  background: var(--accent-3);
+  color: var(--fg);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-offset);
+  transform: rotate(-1deg);
+  transition: transform var(--dur-base) var(--ease-spring);
+}
+[data-design="brutalist"] .contact__cta .email:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
+[data-design="brutalist"] .nav {
+  background: var(--bg);
+  border-block-end: var(--border-thick);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+[data-design="brutalist"] .controls__group {
+  background: var(--bg-elevated);
+  border: var(--border-thick);
+  border-radius: 0;
+  padding: 4px;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--shadow-offset-sm);
+}
+[data-design="brutalist"] .controls__btn {
+  border-radius: 0;
+  font-weight: 700;
+}
+[data-design="brutalist"] .controls__btn.is-active,
+[data-design="brutalist"] .controls__btn[aria-pressed="true"] {
+  background: var(--accent-1);
+  color: #fff;
+}
+
+/* Project card variant */
+[data-design="brutalist"] .project-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  min-height: 240px;
+  justify-content: space-between;
+}
+[data-design="brutalist"] .project-card:nth-child(3n) { background: var(--accent-3); }
+[data-design="brutalist"] .project-card:nth-child(5n) {
+  background: var(--accent-2);
+  color: #fff;
+}

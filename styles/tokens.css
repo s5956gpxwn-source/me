@@ -1,0 +1,184 @@
+/* =========================================================
+ * Design tokens — change colors/radii/fonts from one place.
+ * Each design overrides :root vars via [data-design="..."].
+ * Dark/light handled via [data-theme="dark|light"].
+ * ========================================================= */
+
+:root {
+  /* Font stacks — system fonts (network-free) */
+  --font-sans-en: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-sans-ar: "SF Arabic", "Helvetica Neue Arabic", "Segoe UI Arabic",
+    "Geeza Pro", "Tahoma", "Arial", sans-serif;
+  --font-display-en: "SF Pro Display", "Inter", -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display-ar: "SF Arabic", "Geeza Pro", "Segoe UI Arabic", "Tahoma",
+    sans-serif;
+  --font-mono: "SF Mono", ui-monospace, "JetBrains Mono", "Menlo", "Consolas",
+    monospace;
+
+  /* Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: clamp(2.5rem, 5vw, 3.5rem);
+  --text-6xl: clamp(3rem, 7vw, 5rem);
+  --text-7xl: clamp(3.5rem, 9vw, 7rem);
+  --text-display: clamp(4rem, 14vw, 12rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --container-max: 1280px;
+  --container-narrow: 960px;
+  --container-pad: clamp(1rem, 4vw, 2.5rem);
+
+  /* Easing + timings */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.5, 1.5, 0.5, 1);
+  --ease-glide: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 600ms;
+  --dur-slower: 1200ms;
+
+  /* Z-index scale */
+  --z-base: 0;
+  --z-raise: 10;
+  --z-sticky: 100;
+  --z-overlay: 900;
+  --z-controls: 1000;
+  --z-cursor: 9999;
+
+  /* Defaults that each design overrides */
+  --bg: #0b0b0f;
+  --bg-elevated: #14141c;
+  --fg: #f5f5f7;
+  --fg-muted: #9ea0aa;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent-1: #a855f7;
+  --accent-2: #3b82f6;
+  --accent-3: #ec4899;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-card: 20px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.35);
+  --font-display: var(--font-display-en), var(--font-display-ar);
+  --font-body: var(--font-sans-en), var(--font-sans-ar);
+}
+
+/* RTL swaps the display/body stacks so Arabic system font takes priority */
+html[lang="ar"] {
+  --font-display: var(--font-display-ar), var(--font-display-en);
+  --font-body: var(--font-sans-ar), var(--font-sans-en);
+}
+
+/* ================= AURORA ================= */
+[data-design="aurora"] {
+  --bg: #07091c;
+  --bg-elevated: rgba(18, 23, 47, 0.6);
+  --fg: #e8ebff;
+  --fg-muted: #9aa0c9;
+  --border: rgba(168, 85, 247, 0.18);
+  --accent-1: #a855f7; /* violet */
+  --accent-2: #3b82f6; /* electric blue */
+  --accent-3: #ec4899; /* neon pink */
+  --accent-4: #10b981; /* teal */
+  --radius-card: 20px;
+  --shadow-sm: 0 0 20px rgba(168, 85, 247, 0.1);
+  --shadow-md: 0 16px 40px -8px rgba(59, 130, 246, 0.25),
+    0 4px 16px rgba(168, 85, 247, 0.15);
+  --shadow-lg: 0 24px 80px -12px rgba(168, 85, 247, 0.3);
+  --glow-text: 0 0 40px rgba(168, 85, 247, 0.5);
+}
+[data-design="aurora"][data-theme="light"] {
+  --bg: #eef0ff;
+  --bg-elevated: rgba(255, 255, 255, 0.7);
+  --fg: #07091c;
+  --fg-muted: #4c5379;
+  --border: rgba(168, 85, 247, 0.25);
+  --shadow-lg: 0 24px 80px -12px rgba(168, 85, 247, 0.2);
+}
+
+/* ================= GLASS ================= */
+[data-design="glass"] {
+  --bg: #f6f5f1;
+  --bg-elevated: rgba(255, 255, 255, 0.72);
+  --fg: #0a0a0f;
+  --fg-muted: #64646f;
+  --border: rgba(10, 10, 15, 0.08);
+  --accent-1: #d4a574; /* gold */
+  --accent-2: #8ec5fc; /* pastel blue */
+  --accent-3: #e0c3fc; /* pastel violet */
+  --accent-4: #fbc2eb; /* pastel pink */
+  --radius-card: 32px;
+  --shadow-sm: 0 1px 2px rgba(10, 10, 15, 0.04),
+    0 2px 8px rgba(10, 10, 15, 0.04);
+  --shadow-md: 0 2px 6px rgba(10, 10, 15, 0.04),
+    0 12px 32px -8px rgba(10, 10, 15, 0.1);
+  --shadow-lg: 0 8px 24px rgba(10, 10, 15, 0.06),
+    0 32px 72px -12px rgba(10, 10, 15, 0.15);
+}
+[data-design="glass"][data-theme="dark"] {
+  --bg: #0b0b10;
+  --bg-elevated: rgba(255, 255, 255, 0.06);
+  --fg: #f6f5f1;
+  --fg-muted: #a5a5b2;
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* ================= BRUTALIST ================= */
+[data-design="brutalist"] {
+  --bg: #fef3c7;
+  --fg: #0d0d0d;
+  --fg-muted: #3d3d3d;
+  --bg-elevated: #ffffff;
+  --border: #0d0d0d;
+  --accent-1: #ff3366; /* hot pink */
+  --accent-2: #0066ff; /* electric blue */
+  --accent-3: #ffcc00; /* yellow */
+  --accent-4: #00ff88; /* neon green */
+  --radius-card: 0px;
+  --border-thick: 3px solid #0d0d0d;
+  --shadow-offset: 8px 8px 0 #0d0d0d;
+  --shadow-offset-sm: 4px 4px 0 #0d0d0d;
+  --shadow-sm: var(--shadow-offset-sm);
+  --shadow-md: var(--shadow-offset);
+  --shadow-lg: 12px 12px 0 #0d0d0d;
+}
+[data-design="brutalist"][data-theme="dark"] {
+  --bg: #0d0d0d;
+  --fg: #fef3c7;
+  --fg-muted: #b5b5a5;
+  --bg-elevated: #1a1a1a;
+  --border: #fef3c7;
+  --shadow-offset: 8px 8px 0 #fef3c7;
+  --shadow-offset-sm: 4px 4px 0 #fef3c7;
+  --shadow-sm: var(--shadow-offset-sm);
+  --shadow-md: var(--shadow-offset);
+  --shadow-lg: 12px 12px 0 #fef3c7;
+}

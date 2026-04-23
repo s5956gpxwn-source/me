@@ -1,0 +1,72 @@
+/* Generic layout utilities used across designs */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(5rem, 12vh, 10rem);
+}
+
+.section--tight {
+  padding-block: clamp(3rem, 8vh, 6rem);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-6));
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, var(--space-3));
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap, var(--space-6));
+}
+
+/* Bento-style grid used for projects (aurora default) */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-4);
+}
+.bento > * { min-height: 220px; }
+
+.bento .b-wide { grid-column: span 8; }
+.bento .b-narrow { grid-column: span 4; }
+.bento .b-half { grid-column: span 6; }
+.bento .b-tall { grid-row: span 2; }
+.bento .b-full { grid-column: 1 / -1; }
+
+@media (max-width: 900px) {
+  .bento { grid-template-columns: repeat(6, 1fr); }
+  .bento .b-wide,
+  .bento .b-narrow,
+  .bento .b-half { grid-column: span 6; }
+}
+
+/* App root layers */
+.app-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.bg-stage {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}

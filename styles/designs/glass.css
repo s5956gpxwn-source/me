@@ -1,0 +1,210 @@
+/* ================ SOFT LIQUID GLASS ================
+ * Apple / Vision Pro — soft, airy, premium glass.
+ * ================================================== */
+
+[data-design="glass"] body {
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(224, 195, 252, 0.6), transparent 70%),
+    radial-gradient(ellipse 80% 40% at 100% 100%, rgba(142, 197, 252, 0.4), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(251, 194, 235, 0.3), transparent 70%),
+    var(--bg);
+}
+[data-design="glass"][data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 100% 60% at 50% 0%, rgba(224, 195, 252, 0.18), transparent 70%),
+    radial-gradient(ellipse 80% 40% at 100% 100%, rgba(142, 197, 252, 0.14), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(251, 194, 235, 0.1), transparent 70%),
+    var(--bg);
+}
+
+[data-design="glass"] .card {
+  background: color-mix(in oklab, var(--bg-elevated) 100%, transparent);
+  backdrop-filter: blur(32px) saturate(1.8);
+  -webkit-backdrop-filter: blur(32px) saturate(1.8);
+  border: 1px solid color-mix(in oklab, var(--fg) 8%, transparent);
+  border-radius: var(--radius-xl);
+}
+[data-design="glass"] .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, #fff 35%, transparent) 0%,
+    transparent 40%
+  );
+  pointer-events: none;
+  opacity: 0.6;
+}
+[data-design="glass"][data-theme="dark"] .card::after {
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, #fff 12%, transparent) 0%,
+    transparent 40%
+  );
+}
+
+[data-design="glass"] .btn {
+  background: var(--fg);
+  color: var(--bg);
+  border-radius: 999px;
+  padding: 1rem 1.75rem;
+  box-shadow: var(--shadow-md);
+  transition: all var(--dur-base) var(--ease-spring);
+}
+[data-design="glass"] .btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+[data-design="glass"] .btn--ghost {
+  background: color-mix(in oklab, var(--bg-elevated) 100%, transparent);
+  color: var(--fg);
+  border-color: color-mix(in oklab, var(--fg) 12%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Hero */
+[data-design="glass"] .hero--glass {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding-block: var(--space-20);
+  overflow: hidden;
+}
+[data-design="glass"] .hero__eyebrow {
+  text-align: center;
+  margin-block-end: var(--space-4);
+}
+[data-design="glass"] .hero__title {
+  font-size: var(--text-7xl);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  text-align: center;
+  max-width: 14ch;
+  margin-inline: auto;
+}
+[data-design="glass"] .hero__title em {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--accent-1), color-mix(in oklab, var(--accent-1) 60%, var(--accent-3)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-design="glass"] .hero__sub {
+  text-align: center;
+  font-size: var(--text-xl);
+  color: var(--fg-muted);
+  max-width: 48ch;
+  margin: var(--space-6) auto 0;
+  line-height: 1.6;
+}
+[data-design="glass"] .hero__ctas {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  margin-block-start: var(--space-10);
+  flex-wrap: wrap;
+}
+
+[data-design="glass"] .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Glass "mesh" gradient blobs */
+[data-design="glass"] .mesh-blob {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+[data-design="glass"][data-theme="dark"] .mesh-blob { opacity: 0.4; }
+
+[data-design="glass"] .stat {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  color: var(--fg);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+[data-design="glass"] .chip-skill {
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--bg-elevated) 100%, transparent);
+  border: 1px solid color-mix(in oklab, var(--fg) 8%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  font-size: var(--text-sm);
+  transition: all var(--dur-base) var(--ease-spring);
+}
+[data-design="glass"] .chip-skill:hover {
+  transform: translateY(-3px) scale(1.04);
+  background: color-mix(in oklab, var(--accent-1) 12%, var(--bg-elevated));
+}
+
+[data-design="glass"] .social-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  aspect-ratio: 1;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: color-mix(in oklab, var(--bg-elevated) 100%, transparent);
+  backdrop-filter: blur(32px) saturate(1.8);
+  -webkit-backdrop-filter: blur(32px) saturate(1.8);
+  border: 1px solid color-mix(in oklab, var(--fg) 8%, transparent);
+  transition: all var(--dur-slow) var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+}
+[data-design="glass"] .social-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(160deg, color-mix(in oklab, #fff 35%, transparent), transparent 50%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+[data-design="glass"] .social-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+[data-design="glass"] .social-card svg {
+  width: 32px;
+  height: 32px;
+  color: var(--social-color, var(--fg));
+}
+
+[data-design="glass"] .contact__cta {
+  font-size: var(--text-6xl);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+[data-design="glass"] .contact__cta .email {
+  font-weight: 500;
+  background: linear-gradient(135deg, var(--accent-1), color-mix(in oklab, var(--accent-1) 50%, var(--accent-2)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bento refinement */
+[data-design="glass"] .bento { gap: var(--space-6); }
+
+/* Magnetic refinement — smoother spring */
+[data-design="glass"] .magnetic { transition: transform 500ms var(--ease-spring); }

@@ -1,0 +1,14 @@
+{
+  "name": "me-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal portfolio — vanilla ES modules, 3 switchable designs, AR/EN + dark/light toggles",
+  "scripts": {
+    "dev": "http-server . -p 3000 -c-1 -s --cors -o",
+    "start": "http-server . -p 3000 -c-1 -s --cors",
+    "preview": "serve -s . -l 3000"
+  },
+  "keywords": ["portfolio", "vanilla", "webgl"],
+  "author": ""
+}

@@ -1,0 +1,191 @@
+/* ================ AURORA LIQUID ================
+ * Cinematic dark, aurora-like light play, glassmorphism cards.
+ * ============================================== */
+
+[data-design="aurora"] body {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(168, 85, 247, 0.15), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 100% 20%, rgba(59, 130, 246, 0.12), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 0% 60%, rgba(236, 72, 153, 0.1), transparent 60%),
+    var(--bg);
+}
+
+[data-design="aurora"] .card {
+  background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--bg-elevated) 90%, transparent),
+      color-mix(in oklab, var(--bg-elevated) 70%, transparent)
+    );
+  backdrop-filter: blur(24px) saturate(1.5);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid var(--border);
+}
+[data-design="aurora"] .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--accent-1) 40%, transparent),
+    transparent 40%,
+    color-mix(in oklab, var(--accent-2) 30%, transparent)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.7;
+}
+[data-design="aurora"] .card:hover {
+  border-color: color-mix(in oklab, var(--accent-1) 40%, var(--border));
+}
+
+[data-design="aurora"] .btn {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--accent-1) 60%, transparent),
+    0 12px 32px -8px color-mix(in oklab, var(--accent-1) 50%, transparent);
+}
+[data-design="aurora"] .btn--ghost {
+  background: color-mix(in oklab, var(--bg-elevated) 60%, transparent);
+  color: var(--fg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Hero */
+[data-design="aurora"] .hero--aurora {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-20);
+  overflow: hidden;
+}
+[data-design="aurora"] .hero__title {
+  font-size: var(--text-display);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+}
+[data-design="aurora"] .hero__title .line {
+  display: block;
+}
+[data-design="aurora"] .hero__title .line:nth-child(2) {
+  background: linear-gradient(110deg, var(--accent-3), var(--accent-1) 40%, var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 40px rgba(168, 85, 247, 0.3));
+}
+
+/* Aurora canvas */
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+}
+
+/* Liquid blob (hero) */
+.liquid-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  transition: transform 100ms linear;
+}
+
+[data-design="aurora"] .stat {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+[data-design="aurora"] .chip-skill {
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--bg-elevated) 80%, transparent);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  transition: all var(--dur-base) var(--ease-out-expo);
+}
+[data-design="aurora"] .chip-skill:hover {
+  transform: translateY(-4px) scale(1.04);
+  border-color: var(--accent-1);
+  box-shadow: 0 0 30px color-mix(in oklab, var(--accent-1) 30%, transparent);
+}
+
+[data-design="aurora"] .social-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 1;
+  padding: var(--space-6);
+  border-radius: var(--radius-card);
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--bg-elevated) 80%, transparent),
+    color-mix(in oklab, var(--bg-elevated) 50%, transparent)
+  );
+  border: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all var(--dur-base) var(--ease-out-expo);
+  overflow: hidden;
+}
+[data-design="aurora"] .social-card::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(circle at 30% 30%, var(--social-color, var(--accent-1)), transparent 50%);
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out-expo);
+}
+[data-design="aurora"] .social-card:hover::before { opacity: 0.3; }
+[data-design="aurora"] .social-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--social-color, var(--accent-1));
+}
+[data-design="aurora"] .social-card svg {
+  width: 40px;
+  height: 40px;
+  color: var(--social-color, var(--fg));
+  transition: transform var(--dur-base) var(--ease-spring);
+}
+[data-design="aurora"] .social-card:hover svg { transform: scale(1.15) rotate(-5deg); }
+
+[data-design="aurora"] .contact__cta {
+  font-size: var(--text-7xl);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+[data-design="aurora"] .contact__cta .email {
+  display: inline-block;
+  background: linear-gradient(110deg, var(--accent-1), var(--accent-3) 60%, var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border-block-end: 2px dashed color-mix(in oklab, var(--accent-1) 40%, transparent);
+  transition: all var(--dur-base);
+}
+[data-design="aurora"] .contact__cta .email:hover {
+  border-block-end-style: solid;
+}

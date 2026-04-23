@@ -1,0 +1,15 @@
+/*
+ * Entry — order matters.
+ *   tokens  : design variables (:root + [data-design="..."])
+ *   base    : reset, typography, accessibility
+ *   layout  : shared layout utilities (container, grid, stack)
+ *   components : shared UI primitives (buttons, cards, badges, controls)
+ *   designs : per-design overrides + variant-specific rules
+ */
+@import "./tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./components.css";
+@import "./designs/aurora.css";
+@import "./designs/glass.css";
+@import "./designs/brutalist.css";
