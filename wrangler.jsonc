@@ -1,0 +1,12 @@
+// Cloudflare Workers config for this static portfolio.
+// With no fetch handler, this project is served purely as static assets
+// from the repository root. See .assetsignore for excluded files.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "me",
+  "compatibility_date": "2026-04-23",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  }
+}

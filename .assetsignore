@@ -1,0 +1,20 @@
+# Files/directories that Cloudflare should NOT upload as static assets.
+# Syntax: same as .gitignore.
+
+node_modules
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+wrangler.toml
+package.json
+package-lock.json
+bun.lock
+bun.lockb
+yarn.lock
+pnpm-lock.yaml
+README.md
+*.log
+.DS_Store
+.vscode
+.idea
