@@ -1,0 +1,60 @@
+/* Tabs */
+"tab.converter"  = "Convert";
+"tab.age"        = "Age";
+"tab.duration"   = "Duration";
+"tab.settings"   = "Settings";
+
+/* Calendar */
+"calendar.hijri"      = "Hijri";
+"calendar.gregorian"  = "Gregorian";
+
+/* Hijri Months */
+"month.hijri.muharram"  = "Muharram";
+"month.hijri.safar"     = "Safar";
+"month.hijri.rabi1"     = "Rabi Al-Awwal";
+"month.hijri.rabi2"     = "Rabi Al-Thani";
+"month.hijri.jumada1"   = "Jumada Al-Ula";
+"month.hijri.jumada2"   = "Jumada Al-Thania";
+"month.hijri.rajab"     = "Rajab";
+"month.hijri.shaban"    = "Sha'ban";
+"month.hijri.ramadan"   = "Ramadan";
+"month.hijri.shawwal"   = "Shawwal";
+"month.hijri.dhulqida"  = "Dhu Al-Qi'dah";
+"month.hijri.dhulhijja" = "Dhu Al-Hijjah";
+
+/* Converter */
+"converter.input_title"  = "Date";
+"converter.result_title" = "Result";
+"converter.today"        = "Today";
+
+/* Age */
+"age.birthdate_label"   = "Birth Date";
+"age.calculate"         = "Calculate Age";
+"age.result_title"      = "Your Age";
+"age.result_format"     = "%@ years  %@ months  %@ days";
+"age.today_gregorian"   = "Today – Gregorian";
+"age.today_hijri"       = "Today – Hijri";
+
+/* Duration */
+"duration.start_label"   = "Start Date";
+"duration.end_label"     = "End Date";
+"duration.calculate"     = "Calculate Duration";
+"duration.result_title"  = "Duration";
+"duration.days_only"     = "%@ days";
+"duration.months_days"   = "%@ months and %@ days";
+"duration.years_months_days" = "%@ years  %@ months  %@ days";
+"duration.total_days"    = "Total: %@ days";
+
+/* Settings */
+"settings.section.general"  = "General";
+"settings.section.duration" = "Duration Calculation";
+"settings.section.about"    = "About";
+"settings.default_calendar" = "Default Calendar";
+"settings.number_style"     = "Number System";
+"settings.count_both"       = "Start and End";
+"settings.count_start"      = "Start Only";
+"settings.count_end"        = "End Only";
+"settings.count_neither"    = "Neither";
+"settings.duration_footer"  = "Determines whether the start and/or end day is counted in the duration";
+"settings.calendar_source"  = "Hijri Calendar Source";
+"settings.version"          = "Version";

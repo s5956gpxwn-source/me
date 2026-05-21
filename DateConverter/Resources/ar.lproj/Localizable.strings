@@ -1,0 +1,60 @@
+/* Tabs */
+"tab.converter"  = "تحويل";
+"tab.age"        = "العمر";
+"tab.duration"   = "المدة";
+"tab.settings"   = "الإعدادات";
+
+/* Calendar */
+"calendar.hijri"      = "هجري";
+"calendar.gregorian"  = "ميلادي";
+
+/* Hijri Months */
+"month.hijri.muharram"  = "محرم";
+"month.hijri.safar"     = "صفر";
+"month.hijri.rabi1"     = "ربيع الأول";
+"month.hijri.rabi2"     = "ربيع الثاني";
+"month.hijri.jumada1"   = "جمادى الأولى";
+"month.hijri.jumada2"   = "جمادى الآخرة";
+"month.hijri.rajab"     = "رجب";
+"month.hijri.shaban"    = "شعبان";
+"month.hijri.ramadan"   = "رمضان";
+"month.hijri.shawwal"   = "شوال";
+"month.hijri.dhulqida"  = "ذو القعدة";
+"month.hijri.dhulhijja" = "ذو الحجة";
+
+/* Converter */
+"converter.input_title"  = "التاريخ";
+"converter.result_title" = "النتيجة";
+"converter.today"        = "اليوم";
+
+/* Age */
+"age.birthdate_label"   = "تاريخ الميلاد";
+"age.calculate"         = "احسب العمر";
+"age.result_title"      = "عمرك";
+"age.result_format"     = "%@ سنة  %@ شهر  %@ يوم";
+"age.today_gregorian"   = "اليوم - ميلادي";
+"age.today_hijri"       = "اليوم - هجري";
+
+/* Duration */
+"duration.start_label"   = "تاريخ البداية";
+"duration.end_label"     = "تاريخ النهاية";
+"duration.calculate"     = "احسب المدة";
+"duration.result_title"  = "المدة بينهما";
+"duration.days_only"     = "%@ يوم";
+"duration.months_days"   = "%@ شهر و%@ يوم";
+"duration.years_months_days" = "%@ سنة  %@ شهر  %@ يوم";
+"duration.total_days"    = "إجمالي: %@ يوم";
+
+/* Settings */
+"settings.section.general"  = "عام";
+"settings.section.duration" = "حساب المدة";
+"settings.section.about"    = "عن التطبيق";
+"settings.default_calendar" = "التقويم الافتراضي";
+"settings.number_style"     = "نظام الأرقام";
+"settings.count_both"       = "البداية والنهاية";
+"settings.count_start"      = "البداية فقط";
+"settings.count_end"        = "النهاية فقط";
+"settings.count_neither"    = "بدون حساب";
+"settings.duration_footer"  = "يحدد ما إذا كان يوم البداية و/أو يوم النهاية يُحسب ضمن المدة";
+"settings.calendar_source"  = "مصدر التقويم الهجري";
+"settings.version"          = "الإصدار";
